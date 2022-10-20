@@ -1,6 +1,8 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "usuarios")
@@ -46,5 +49,8 @@ public class Usuario implements Serializable {
 	@OneToOne
     @JoinColumn(name="rol")
     private Rol rol;
+	
+	@OneToMany(mappedBy = "fk_usuario")
+	private List<Reserva> ListReserva;
 
 }

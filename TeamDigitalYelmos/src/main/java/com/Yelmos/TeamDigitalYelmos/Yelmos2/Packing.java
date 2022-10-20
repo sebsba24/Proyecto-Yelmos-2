@@ -1,6 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -28,5 +29,8 @@ public class Packing implements Serializable {
 	@OneToOne
     @JoinColumn(name="fk_reservaP")
     private Reserva idR;
+	
+	@OneToMany (mappedBy = "fk_packing")
+	private List <Despacho> ListDespacho;
 
 }

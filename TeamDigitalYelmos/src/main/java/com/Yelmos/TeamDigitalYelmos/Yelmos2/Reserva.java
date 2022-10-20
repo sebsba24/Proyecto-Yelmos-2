@@ -40,9 +40,9 @@ public class Reserva implements Serializable {
 	@Column(name = "fechaFinR")
 	private Date finR;
 	
-	@OneToOne
-    @JoinColumn(name="fk_usuario")
-    private Usuario idU;
+	@ManyToOne
+    @JoinColumn(name="fk_usuario", referencedColumnName = "idUsuario")
+    private Usuario fk_usuario;
 	
 	
 	

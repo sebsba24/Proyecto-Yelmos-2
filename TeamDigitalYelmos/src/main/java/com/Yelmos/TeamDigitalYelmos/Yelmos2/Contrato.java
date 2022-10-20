@@ -1,6 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 import javax.persistence.*;
@@ -30,16 +31,16 @@ public class Contrato implements Serializable {
 	@Column(name = "detalles", length = 100)
 	private String dtlls;
 	
-	@OneToOne
-    @JoinColumn(name="fk_tipoContrato")
-    private TipoContrato idTContra;
+	@ManyToOne
+	@JoinColumn(name = "fk_proveedor", referencedColumnName = "idProveedor")
+	private Proveedor fk_proveedor;
 	
-	@OneToOne
-    @JoinColumn(name="fk_evento")
-    private Evento idEvent;
+	@ManyToOne
+    @JoinColumn(name="fk_evento", referencedColumnName = "idEvento")
+    private Evento fk_evento;
 	
-	@OneToOne
-    @JoinColumn(name="fk_proveedor")
-    private Proveedor idProv;
+	@ManyToOne
+    @JoinColumn(name="fk_tipoContrato", referencedColumnName = "idTipoContrato")
+    private TipoContrato fk_tipoContrato;
 
 }

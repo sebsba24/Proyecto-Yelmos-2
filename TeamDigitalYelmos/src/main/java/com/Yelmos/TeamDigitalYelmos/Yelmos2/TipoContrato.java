@@ -1,6 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -20,5 +21,8 @@ public class TipoContrato implements Serializable{
 	
 	@Column(name = "nombreTipoContrato", length = 50)
 	private String tipContrato;
+	
+	@OneToMany(mappedBy = "fk_tipoContrato")
+	private List <Contrato> ListContrato;
 
 }

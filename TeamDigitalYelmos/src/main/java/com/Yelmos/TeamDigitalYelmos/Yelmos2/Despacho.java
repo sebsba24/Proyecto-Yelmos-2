@@ -33,8 +33,8 @@ public class Despacho implements Serializable {
     @JoinColumn(name="fk_productoD")
     private Producto idProduc;
 	
-	@OneToOne
-    @JoinColumn(name="fk_packing")
-    private Packing idP;
+	@ManyToOne
+    @JoinColumn(name="fk_packing", referencedColumnName = "idPacking")
+    private Packing fk_packing;
 
 }

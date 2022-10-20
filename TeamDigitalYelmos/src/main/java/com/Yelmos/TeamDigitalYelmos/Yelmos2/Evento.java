@@ -1,6 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -40,6 +41,9 @@ public class Evento implements Serializable {
 	@OneToOne
     @JoinColumn(name="fk_tipoEvento")
     private TipoEvento idTE;
+	
+	@OneToMany(mappedBy = "fk_evento")
+	private List <Contrato> ListContrato;
 
 	
 }

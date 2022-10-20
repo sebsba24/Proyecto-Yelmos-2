@@ -1,6 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -28,6 +29,15 @@ public class Producto implements Serializable {
 	@OneToOne
     @JoinColumn(name="fk_tipoProducto")
     private TipoProducto idTP;
+	
+	@ManyToOne
+	@JoinColumn(name = "fk_inventario", referencedColumnName = "idInventario")
+	private Inventario fk_inventario;
+	
+	@ManyToMany(mappedBy = "ListProducto")
+	private List<Despacho> ListDespacho;
+	
+	
 	
 
 }

@@ -1,7 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
-import java.util.List;
+
 
 import javax.persistence.*;
 
@@ -32,7 +32,5 @@ public class Proveedor implements Serializable{
     @JoinColumn(name="fk_tipoProveedor")
     private TipoProveedor idTProv;
 	
-	@OneToMany(mappedBy="fk_tipoContrato")
-    private List <Contrato> ListProveedor;
 
 }

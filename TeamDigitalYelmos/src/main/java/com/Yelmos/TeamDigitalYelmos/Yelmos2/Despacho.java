@@ -1,7 +1,9 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -36,5 +38,13 @@ public class Despacho implements Serializable {
 	@ManyToOne
     @JoinColumn(name="fk_packing", referencedColumnName = "idPacking")
     private Packing fk_packing;
+	
+	@ManyToMany
+	@JoinTable(name="despacho_producto",
+			joinColumns = @JoinColumn(name="fk_productoI", nullable=false),
+			inverseJoinColumns=@JoinColumn(name="fk_despacho",nullable=false))
+	private List <Producto> ListProducto;
+	
+	
 
 }

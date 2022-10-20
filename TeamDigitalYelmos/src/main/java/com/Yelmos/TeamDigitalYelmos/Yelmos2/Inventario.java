@@ -2,6 +2,7 @@ package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -27,8 +28,9 @@ public class Inventario implements Serializable{
 	@Column(name = "fechaIngreso")
 	private Date fechaing;
 	
-	@OneToOne
-    @JoinColumn(name="fk_productoI")
-    private Producto idProduc;
+	@OneToMany(mappedBy="fk_inventario")
+    private List <Producto> ListProducto;
+	
+	
 
 }

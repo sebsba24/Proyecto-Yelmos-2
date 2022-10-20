@@ -39,8 +39,8 @@ public class Contrato implements Serializable {
     @JoinColumn(name="fk_evento", referencedColumnName = "idEvento")
     private Evento fk_evento;
 	
-	@ManyToOne
-    @JoinColumn(name="fk_tipoContrato", referencedColumnName = "idTipoContrato")
-    private TipoContrato fk_tipoContrato;
+	@OneToOne
+    @JoinColumn(name="fk_tipoContrato")
+    private TipoContrato idTContra;
 
 }

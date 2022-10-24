@@ -19,7 +19,7 @@ public class Inventario implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idInventario")
-	private int idInvt;
+	private Long idInvt;
 	
 	@Column(name = "cantidad")
 	private int cnt;

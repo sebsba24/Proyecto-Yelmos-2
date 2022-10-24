@@ -5,8 +5,13 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "productos")
+@Getter
+@Setter
 public class Producto implements Serializable {
 
 	/**
@@ -17,7 +22,7 @@ public class Producto implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idProducto")
-	private int idProduc;
+	private Long idProduc;
 	
 	@Column(name = "nombreProducto", length = 100)
 	private String nomProduct;
@@ -36,6 +41,10 @@ public class Producto implements Serializable {
 	
 	@ManyToMany(mappedBy = "ListProducto")
 	private List<Despacho> ListDespacho;
+	
+	public Long getIdProduc() {
+		return idProduc;
+	}
 	
 	
 	

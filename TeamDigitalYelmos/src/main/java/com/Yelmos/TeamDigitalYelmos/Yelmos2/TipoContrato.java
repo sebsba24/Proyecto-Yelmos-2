@@ -17,7 +17,7 @@ public class TipoContrato implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idTipoContrato")
-	private int idTContra;
+	private Long idTContra;
 	
 	@Column(name = "nombreTipoContrato", length = 50)
 	private String tipContrato;

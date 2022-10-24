@@ -7,8 +7,13 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "despachos")
+@Getter
+@Setter
 public class Despacho implements Serializable {
 
 	/**
@@ -19,7 +24,7 @@ public class Despacho implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idDespacho")
-	private int idDespa;
+	private Long idDespa;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "fechaSalida")
@@ -45,6 +50,9 @@ public class Despacho implements Serializable {
 			inverseJoinColumns=@JoinColumn(name="fk_despacho",nullable=false))
 	private List <Producto> ListProducto;
 	
+	public Long getIdDespa() {
+		return idDespa;
+	}
 	
 
 }

@@ -1,6 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
+
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,11 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "usuarios")
-
+@Getter
+@Setter 
 public class Usuario implements Serializable {
 	
 	/**
@@ -26,7 +32,7 @@ public class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idUsuario")
-	private int idU;
+	private Long idU;
 	
 	@Column(name = "nombreU", length =40)
 	private String nomU;
@@ -52,5 +58,9 @@ public class Usuario implements Serializable {
 	
 	@OneToMany(mappedBy = "fk_usuario")
 	private List<Reserva> ListReserva;
+	
+	public Long getIdU() {
+		return idU;
+	}
 
 }

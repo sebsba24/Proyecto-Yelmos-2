@@ -16,7 +16,7 @@ public class TipoProducto implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idTipoProducto")
-	private int idTP;
+	private Long idTP;
 	
 	@Column(name ="marca", length = 50)
 	private String marca;

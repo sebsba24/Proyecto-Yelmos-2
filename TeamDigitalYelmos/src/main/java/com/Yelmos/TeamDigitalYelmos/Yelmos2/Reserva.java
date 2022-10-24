@@ -5,9 +5,13 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "reservas")
-
+@Getter
+@Setter
 public class Reserva implements Serializable {
 
 	/**
@@ -18,7 +22,7 @@ public class Reserva implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idReseva")
-	private int idR;
+	private Long idR;
 	
 	@Column(name = "direccionR", length =40)
 	private String direR;
@@ -43,6 +47,10 @@ public class Reserva implements Serializable {
 	@ManyToOne
     @JoinColumn(name="fk_usuario", referencedColumnName = "idUsuario")
     private Usuario fk_usuario;
+	
+	public Long getIdR() {
+		return idR;
+	}
 	
 	
 	

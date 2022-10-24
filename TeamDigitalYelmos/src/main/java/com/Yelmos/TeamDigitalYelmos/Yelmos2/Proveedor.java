@@ -3,10 +3,16 @@ package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 import java.io.Serializable;
 
 
+
 import javax.persistence.*;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "proveedores")
+@Getter
+@Setter
 public class Proveedor implements Serializable{
 
 	/**
@@ -17,7 +23,7 @@ public class Proveedor implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idProveedor")
-	private int idProv;
+	private Long idProv;
 	
 	@Column(name = "nombreProveedor", length = 60)
 	private String nomProvee;
@@ -31,6 +37,10 @@ public class Proveedor implements Serializable{
 	@OneToOne
     @JoinColumn(name="fk_tipoProveedor")
     private TipoProveedor idTProv;
+	
+	public Long getIdProv() {
+		return idProv;
+	}
 	
 
 }

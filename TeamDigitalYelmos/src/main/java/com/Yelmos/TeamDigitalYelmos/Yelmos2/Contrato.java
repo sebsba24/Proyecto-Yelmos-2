@@ -2,12 +2,18 @@ package com.Yelmos.TeamDigitalYelmos.Yelmos2;
 
 import java.io.Serializable;
 
+
 import java.util.Date;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "contratos")
+@Getter
+@Setter
 public class Contrato implements Serializable {
 
 	/**
@@ -18,7 +24,7 @@ public class Contrato implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idContrato")
-	private int idContrato;
+	private Long idContrato;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "fechaInicioC")
@@ -42,5 +48,9 @@ public class Contrato implements Serializable {
 	@OneToOne
     @JoinColumn(name="fk_tipoContrato")
     private TipoContrato idTContra;
+	
+	public Long getIdContrato() {
+		return idContrato;
+	}
 
 }

@@ -18,7 +18,7 @@ public class Packing implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idPacking")
-	private int idP;
+	private Long idP;
 	
 	@Column(name = "cantidadEntrada")
 	private int cantE;

@@ -16,7 +16,7 @@ public class TipoProveedor implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idTipoProveedor")
-	private int idTProv;
+	private Long idTProv;
 	
 	@Column(name = "nombreTipoP" , length = 30)
 	private String nomTipP;

@@ -5,8 +5,13 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "eventos")
+@Getter
+@Setter
 public class Evento implements Serializable {
 
 	/**
@@ -17,7 +22,7 @@ public class Evento implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idEvento")
-	private int idEvent;
+	private Long idEvent;
 	
 	@Column(name = "nombreE", length = 50)
 	private String nomE;
@@ -45,5 +50,8 @@ public class Evento implements Serializable {
 	@OneToMany(mappedBy = "fk_evento")
 	private List <Contrato> ListContrato;
 
+	public Long getIdEvent() {
+		return idEvent;
+	}
 	
 }

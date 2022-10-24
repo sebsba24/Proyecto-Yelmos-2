@@ -16,7 +16,7 @@ public class Categoria implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idCategoria")
-	private int idCatego;
+	private Long idCatego;
 	
 	@Column(name = "nombreCategoria", length = 40)
 	private String nomCtego;

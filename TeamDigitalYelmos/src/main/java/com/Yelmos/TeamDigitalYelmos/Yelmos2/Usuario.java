@@ -58,9 +58,79 @@ public class Usuario implements Serializable {
 	
 	@OneToMany(mappedBy = "fk_usuario")
 	private List<Reserva> ListReserva;
-	
+
 	public Long getIdU() {
 		return idU;
 	}
+
+	public void setIdU(Long idU) {
+		this.idU = idU;
+	}
+
+	public String getNomU() {
+		return nomU;
+	}
+
+	public void setNomU(String nomU) {
+		this.nomU = nomU;
+	}
+
+	public String getApeU() {
+		return apeU;
+	}
+
+	public void setApeU(String apeU) {
+		this.apeU = apeU;
+	}
+
+	public String getEmaU() {
+		return emaU;
+	}
+
+	public void setEmaU(String emaU) {
+		this.emaU = emaU;
+	}
+
+	public Long getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(Long documento) {
+		this.documento = documento;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(String contrasena) {
+		this.contrasena = contrasena;
+	}
+
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
+
+	public List<Reserva> getListReserva() {
+		return ListReserva;
+	}
+
+	public void setListReserva(List<Reserva> listReserva) {
+		ListReserva = listReserva;
+	}
+	
+	
 
 }

@@ -131,9 +131,6 @@ public class Usuario implements Serializable {
 		ListReserva = listReserva;
 	}
 
-	public void setRol(long parseLong) {
-		
-	}
 	
 	
 

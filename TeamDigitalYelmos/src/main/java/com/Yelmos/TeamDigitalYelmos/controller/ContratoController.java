@@ -17,7 +17,7 @@ import com.Yelmos.TeamDigitalYelmos.Yelmos2.Contrato;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ContratoDao;
 
 @Controller
-@RequestMapping(path = "/api/Teamdigitalyelmos/Contratos")
+@RequestMapping(path = "/api/TeamDigitalYelmos/Contratos")
 public class ContratoController {
 	
 	@Autowired

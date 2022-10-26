@@ -1,6 +1,7 @@
 package com.Yelmos.TeamDigitalYelmos.controller;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
@@ -8,20 +9,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.Yelmos2.Usuario;
+import com.Yelmos.TeamDigitalYelmos.facadeIMP.RolDao;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.UsuarioDao;
+import com.Yelmos.TeamDigitalYelmos.repository.UsuarioRepository;
 
 @Controller
-@RequestMapping(path = "/api/Teamdigitalyelmos/Usuarios")
+@RequestMapping(path = "/api/TeamDigitalYelmos/Usuarios")
 public class UsuarioController {
 	
 	@Autowired
 	private UsuarioDao usuarioDao;
+	private RolDao rolDao;
 	
 	@GetMapping("/all")
 	public ResponseEntity<Map<String, Object>> allUsuario(){
@@ -37,18 +44,31 @@ public class UsuarioController {
 		System.out.println("@@"+request.toString());
 		Map<String, Object> respon= new HashMap();
 		Usuario usuar = new Usuario();
+		usuar.setIdU(Long.parseLong(request.get("idUsuario").toString()));
 		usuar.setNomU(request.get("nombreU").toString());
 		usuar.setApeU(request.get("apellidoU").toString());
 		usuar.setEmaU(request.get("emailU").toString());
 		usuar.setDocumento(Long.parseLong(request.get("documento").toString()));
 		usuar.setEstado(request.get("estado").toString());
 		usuar.setContrasena(request.get("contrasena").toString());
-		usuar.setRol(Long.parseLong(request.get("rol").toString()));
-		
-		
-		
+		Rol roo= this.rolDao.findById(Long.parseLong(request.get("idRol").toString()));
+		usuar.setRol(roo); 
 		return new ResponseEntity<>(respon, HttpStatus.OK);
 		
 	}
-
+	
+	@PutMapping("/update")
+	public ResponseEntity<Map<String, Object>> update(@RequestBody Map<String, Object> request){
+		System.out.println("@@"+request.toString());
+		Map<String, Object> respon= new HashMap();
+		return new ResponseEntity<>(respon, HttpStatus.OK);
+		
+	}
+	
+	@DeleteMapping("/delete")
+	public void delete(@RequestBody Usuario request) {
+		usuarioDao.delete(request);
+	}
+	
+	
 }

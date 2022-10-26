@@ -17,7 +17,7 @@ import com.Yelmos.TeamDigitalYelmos.Yelmos2.Producto;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ProductoDao;
 
 @Controller
-@RequestMapping(path = "/api/Teamdigitalyelmos/Productos")
+@RequestMapping(path = "/api/TeamDigitalYelmos/Productos")
 public class ProductoController {
 	
 	@Autowired

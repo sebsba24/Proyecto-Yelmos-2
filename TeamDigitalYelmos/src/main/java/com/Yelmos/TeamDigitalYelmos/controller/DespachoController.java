@@ -17,7 +17,7 @@ import com.Yelmos.TeamDigitalYelmos.Yelmos2.Despacho;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.DespachoDao;
 
 @Controller
-@RequestMapping(path = "/api/Teamdigitalyelmos/Despachos")
+@RequestMapping(path = "/api/TeamDigitalYelmos/Despachos")
 public class DespachoController {
 	
 	@Autowired

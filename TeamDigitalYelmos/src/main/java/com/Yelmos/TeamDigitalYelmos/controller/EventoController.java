@@ -17,7 +17,7 @@ import com.Yelmos.TeamDigitalYelmos.Yelmos2.Evento;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.EventoDao;
 
 @Controller
-@RequestMapping(path = "/api/Teamdigitalyelmos/Eventos" )
+@RequestMapping(path = "/api/TeamDigitalYelmos/Eventos" )
 public class EventoController {
 	
 	@Autowired

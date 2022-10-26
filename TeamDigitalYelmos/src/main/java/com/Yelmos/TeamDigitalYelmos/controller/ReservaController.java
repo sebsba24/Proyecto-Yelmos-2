@@ -17,7 +17,7 @@ import com.Yelmos.TeamDigitalYelmos.Yelmos2.Reserva;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ReservaDao;
 
 @Controller
-@RequestMapping(path= "/api/Teamdigitalyelmos/Reservas" )
+@RequestMapping(path= "/api/TeamDigitalYelmos/Reservas" )
 public class ReservaController {
 	
 	@Autowired

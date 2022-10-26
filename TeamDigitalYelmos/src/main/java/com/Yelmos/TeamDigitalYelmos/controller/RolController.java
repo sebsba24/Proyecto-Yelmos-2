@@ -13,12 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.RolDao;
 
-@Controller
-@RequestMapping(path = "/api/teamDigitalYelmos/rol")
+@RestController
+@RequestMapping(path = "/api/teamdigitalyelmos/Rol")
 public class RolController {
 	@Autowired
 	private RolDao rolDao;
@@ -42,8 +43,8 @@ public class RolController {
 	}
 	
 	@DeleteMapping
-	public void delete(@RequestBody Rol rol) {
-		rolDao.delete(rol);
+	public void delete(@RequestBody Rol request) {
+		rolDao.delete(request);
 	}
 
 }

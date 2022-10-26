@@ -130,6 +130,10 @@ public class Usuario implements Serializable {
 	public void setListReserva(List<Reserva> listReserva) {
 		ListReserva = listReserva;
 	}
+
+	public void setRol(long parseLong) {
+		
+	}
 	
 	
 

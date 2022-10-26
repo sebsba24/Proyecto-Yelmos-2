@@ -36,6 +36,16 @@ public class UsuarioController {
 	public ResponseEntity<Map<String, Object>> createUsuario(@RequestBody Map<String, Object> request){
 		System.out.println("@@"+request.toString());
 		Map<String, Object> respon= new HashMap();
+		Usuario usuar = new Usuario();
+		usuar.setNomU(request.get("nombreU").toString());
+		usuar.setApeU(request.get("apellidoU").toString());
+		usuar.setEmaU(request.get("emailU").toString());
+		usuar.setDocumento(Long.parseLong(request.get("documento").toString()));
+		usuar.setEstado(request.get("estado").toString());
+		usuar.setContrasena(request.get("contrasena").toString());
+		usuar.setRol(Long.parseLong(request.get("rol").toString()));
+		
+		
 		
 		return new ResponseEntity<>(respon, HttpStatus.OK);
 		

@@ -23,7 +23,7 @@ import com.Yelmos.TeamDigitalYelmos.facadeIMP.UsuarioDao;
 import com.Yelmos.TeamDigitalYelmos.repository.UsuarioRepository;
 
 @Controller
-@RequestMapping(path = "/api/TeamDigitalYelmos/Usuarios")
+@RequestMapping(path = "/api/teamDigitalYelmos/usuarios")
 public class UsuarioController {
 	
 	@Autowired
@@ -44,15 +44,14 @@ public class UsuarioController {
 		System.out.println("@@"+request.toString());
 		Map<String, Object> respon= new HashMap();
 		Usuario usuar = new Usuario();
-		usuar.setIdU(Long.parseLong(request.get("idUsuario").toString()));
-		usuar.setNomU(request.get("nombreU").toString());
 		usuar.setApeU(request.get("apellidoU").toString());
-		usuar.setEmaU(request.get("emailU").toString());
-		usuar.setDocumento(Long.parseLong(request.get("documento").toString()));
-		usuar.setEstado(request.get("estado").toString());
 		usuar.setContrasena(request.get("contrasena").toString());
-		Rol roo= this.rolDao.findById(Long.parseLong(request.get("idRol").toString()));
-		usuar.setRol(roo); 
+		usuar.setDocumento(Long.parseLong(request.get("documento").toString()));
+		usuar.setEmaU(request.get("emailU").toString());
+		usuar.setEstado(request.get("estado").toString());
+		usuar.setNomU(request.get("nombreU").toString());
+//		Rol roo= this.rolDao.findById(Long.parseLong(request.get("idRol").toString()));
+//		usuar.setRol(roo); 
 		return new ResponseEntity<>(respon, HttpStatus.OK);
 		
 	}

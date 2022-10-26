@@ -14,29 +14,26 @@ public class ReservaDao implements IReservas {
 
 	@Autowired
 	private ReservaRepository reservaRepo;
-	
+
 	@Override
 	public List<Reserva> findALll() {
 		return this.reservaRepo.findAll();
 	}
 
 	@Override
-	public void create(Reserva reserv) {
-		this.reservaRepo.save(reserv);
-		
+	public Reserva create(Reserva reserv) {
+		return reservaRepo.save(reserv);
 	}
 
 	@Override
-	public void update(Reserva reserv) {
-		this.reservaRepo.save(reserv);
-		
+	public Reserva update(Reserva reserv) {
+		return reservaRepo.save(reserv);
 	}
 
 	@Override
 	public void delete(Reserva reserv) {
-		Reserva reser = this.reservaRepo.getById(reserv.getIdR());
-		this.reservaRepo.delete(reser);
-		
+		reservaRepo.delete(reserv);
 	}
-
+	
+	
 }

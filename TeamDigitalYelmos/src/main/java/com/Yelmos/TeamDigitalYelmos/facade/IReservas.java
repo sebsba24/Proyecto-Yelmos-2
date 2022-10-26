@@ -7,8 +7,8 @@ import com.Yelmos.TeamDigitalYelmos.Yelmos2.Reserva;
 public interface IReservas {
 	
 	public List<Reserva> findALll();
-	public void create(Reserva reserv);
-	public void update(Reserva reserv);
+	public Reserva create(Reserva reserv);
+	public Reserva update(Reserva reserv);
 	public void delete(Reserva reserv);
 
 }

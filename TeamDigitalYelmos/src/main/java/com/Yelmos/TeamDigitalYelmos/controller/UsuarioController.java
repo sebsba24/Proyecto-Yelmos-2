@@ -50,7 +50,7 @@ public class UsuarioController {
 		usuar.setEmaU(request.get("emailU").toString());
 		usuar.setEstado(request.get("estado").toString());
 		usuar.setNomU(request.get("nombreU").toString());
-//		Rol roo= this.rolDao.findById(Long.parseLong(request.get("idRol").toString()));
+//		Rol roo= this.rolDao.finById(Long.parseLong(request.get("idRol").toString()));
 //		usuar.setRol(roo); 
 		return new ResponseEntity<>(respon, HttpStatus.OK);
 		

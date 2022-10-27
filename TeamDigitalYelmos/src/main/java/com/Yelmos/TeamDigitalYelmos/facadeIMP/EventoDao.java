@@ -10,32 +10,27 @@ import com.Yelmos.TeamDigitalYelmos.facade.IEvento;
 import com.Yelmos.TeamDigitalYelmos.repository.EventoRepository;
 
 @Service
-public class EventoDao implements IEvento {
+public class EventoDao {
 	
 	@Autowired
 	private EventoRepository eventoRepor;
 
-	@Override
-	public List<Evento> findALll() {
+	public List<Evento> findAll() {
 		return this.eventoRepor.findAll();
 	}
 
-	@Override
-	public void create(Evento event) {
-		this.eventoRepor.save(event);
+	public Evento create(Evento event) {
+		return eventoRepor.save(event);
 		
 	}
 
-	@Override
-	public void update(Evento event) {
-		this.eventoRepor.save(event);
+	public Evento update(Evento event) {
+		return eventoRepor.save(event);
 		
 	}
 
-	@Override
 	public void delete(Evento event) {
-		Evento eve = this.eventoRepor.getById(event.getIdEvent());
-		this.eventoRepor.delete(eve);
+		eventoRepor.delete(event);
 		
 	}
 	

@@ -8,36 +8,44 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.Yelmos.TeamDigitalYelmos.Yelmos2.Proveedor;
+import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ProveedorDao;
 
-@Controller
+@RestController
 @RequestMapping(path = "/api/TeamDigitalYelmos/Proveedores")
 public class ProveedorController {
 	
 	@Autowired
 	private ProveedorDao proveedorDao;
 	
-	@GetMapping("/all")
-	public ResponseEntity<Map<String, Object>> allProveedor(){
-		Map<String, Object> respon= new HashMap();
-		List<Proveedor> listProveedor= this.proveedorDao.findALll();
-		respon.put("data",listProveedor);
-		return new ResponseEntity<>(respon, HttpStatus.OK);
+	@GetMapping
+	public List <Proveedor> findAll(){
+		return proveedorDao.findALll();
 	}
 	
-	@PostMapping("/create")
-	public ResponseEntity<Map<String, Object>> createProveedor(@RequestBody Map<String, Object> request){
-		System.out.println("@@"+request.toString());
-		Map<String, Object> respon= new HashMap();
-		
-		return new ResponseEntity<>(respon, HttpStatus.OK);
+	@PostMapping
+	public Proveedor create (@RequestBody Proveedor prov) {
+		return proveedorDao.create(prov);
 		
 	}
 
+	@PutMapping
+	public Proveedor update (@RequestBody Proveedor prov) {
+		return proveedorDao.update(prov);
+		
+	}
+	
+	@DeleteMapping
+	public void delete(@RequestBody Proveedor prov) {
+		proveedorDao.delete(prov);
+	}
 }

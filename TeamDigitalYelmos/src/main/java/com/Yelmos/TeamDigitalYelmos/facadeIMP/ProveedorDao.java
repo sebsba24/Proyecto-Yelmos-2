@@ -10,33 +10,28 @@ import com.Yelmos.TeamDigitalYelmos.facade.IProveedores;
 import com.Yelmos.TeamDigitalYelmos.repository.ProveedorRepository;
 
 @Service
-public class ProveedorDao implements IProveedores{
+public class ProveedorDao{
 
 	
 	@Autowired
 	private ProveedorRepository proveedorRepor;
 	
-	@Override
 	public List<Proveedor> findALll() {
 		return this.proveedorRepor.findAll();
 	}
 
-	@Override
-	public void create(Proveedor prov) {
-		this.proveedorRepor.save(prov);
+	public Proveedor create(Proveedor prov) {
+		return proveedorRepor.save(prov);
 		
 	}
 
-	@Override
-	public void update(Proveedor prov) {
-		this.proveedorRepor.save(prov);
+	public Proveedor update(Proveedor prov) {
+		return proveedorRepor.save(prov);
 		
 	}
 
-	@Override
 	public void delete(Proveedor prov) {
-		Proveedor provee = this.proveedorRepor.getById(prov.getIdProv());
-		this.proveedorRepor.delete(provee);
+		proveedorRepor.delete(prov);
 		
 	}
 

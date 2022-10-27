@@ -8,12 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.Yelmos.TeamDigitalYelmos.Yelmos2.Contrato;
+import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ContratoDao;
 
 @Controller
@@ -24,21 +27,26 @@ public class ContratoController {
 	private ContratoDao contratoDao;
 	
 	@GetMapping("/all")
-	public ResponseEntity<Map<String, Object>> allContrato(){
-		Map<String, Object> respon= new HashMap();
-		List<Contrato> listContrato= this.contratoDao.findALll();
-		respon.put("data",listContrato);
-		return new ResponseEntity<>(respon, HttpStatus.OK);
+	public List <Contrato> findAll(){
+		return contratoDao.findAll();
 		
 	}
 	
-	@PostMapping("/create")
-	public ResponseEntity<Map<String, Object>> createContrato(@RequestBody Map<String, Object> request){
-		System.out.println("@@"+request.toString());
-		Map<String, Object> respon= new HashMap();
+	@PostMapping
+	public Contrato create (@RequestBody Contrato contrac) {
+		return contratoDao.create(contrac);
 		
-		return new ResponseEntity<>(respon, HttpStatus.OK);
+	}
+	
+	@PutMapping
+	public Contrato update (@RequestBody Contrato contrac) {
+		return contratoDao.update(contrac);
 		
+	}
+	
+	@DeleteMapping
+	public void delete(@RequestBody Contrato contrac) {
+		contratoDao.delete(contrac);
 	}
 
 }

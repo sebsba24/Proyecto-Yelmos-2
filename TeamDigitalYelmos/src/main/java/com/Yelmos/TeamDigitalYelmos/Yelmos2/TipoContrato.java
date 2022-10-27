@@ -5,8 +5,13 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "tiposcontratos")
+@Getter
+@Setter
 public class TipoContrato implements Serializable{
 
 	/**

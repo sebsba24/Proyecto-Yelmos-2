@@ -8,37 +8,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.Yelmos.TeamDigitalYelmos.Yelmos2.Despacho;
+import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.DespachoDao;
 
-@Controller
+@RestController
 @RequestMapping(path = "/api/TeamDigitalYelmos/Despachos")
 public class DespachoController {
 	
 	@Autowired
 	private DespachoDao despachoDao;
 	
-	@GetMapping("/all")
-	public ResponseEntity<Map<String, Object>> allDespacho(){
-		Map<String, Object> respon= new HashMap();
-		List<Despacho> listDespacho= this.despachoDao.findALll();
-		respon.put("data",listDespacho);
-		return new ResponseEntity<>(respon, HttpStatus.OK);
+	@GetMapping
+	public List<Despacho> findAll(){
+		return despachoDao.findAll();
 		
 	}
 	
-	@PostMapping("/create")
-	public ResponseEntity<Map<String, Object>> createDespacho(@RequestBody Map<String, Object> request){
-		System.out.println("@@"+request.toString());
-		Map<String, Object> respon= new HashMap();
+	@PostMapping
+	public Despacho create (@RequestBody Despacho despa) {
+		return despachoDao.create(despa);
 		
-		return new ResponseEntity<>(respon, HttpStatus.OK);
+	}
+	
+	@PutMapping
+	public Despacho update (@RequestBody Despacho despa) {
+		return despachoDao.update(despa);
 		
+	}
+	
+	@DeleteMapping
+	public void delete(@RequestBody Despacho despa) {
+		despachoDao.delete(despa);
 	}
 
 }

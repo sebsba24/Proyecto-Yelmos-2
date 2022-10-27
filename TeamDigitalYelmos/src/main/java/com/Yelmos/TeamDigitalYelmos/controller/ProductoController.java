@@ -8,37 +8,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.Yelmos.TeamDigitalYelmos.Yelmos2.Producto;
+import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ProductoDao;
 
-@Controller
+@RestController
 @RequestMapping(path = "/api/TeamDigitalYelmos/Productos")
 public class ProductoController {
 	
 	@Autowired
 	private ProductoDao productoDao;
 	
-	@GetMapping("/all")
-	public ResponseEntity<Map<String, Object>> allProducto(){
-		Map<String, Object> respon= new HashMap();
-		List<Producto> listProducto= this.productoDao.findALll();
-		respon.put("data",listProducto);
-		return new ResponseEntity<>(respon, HttpStatus.OK);
+	@GetMapping
+	public List <Producto> findAll(){
+		return productoDao.findALll();
 		
 	}
 	
-	@PostMapping("/create")
-	public ResponseEntity<Map<String, Object>> createProducto(@RequestBody Map<String, Object> request){
-		System.out.println("@@"+request.toString());
-		Map<String, Object> respon= new HashMap();
-		
-		return new ResponseEntity<>(respon, HttpStatus.OK);
-		
-	}
+//	@PostMapping
+//	public Producto create (@RequestBody Producto product) {
+//		return productoDao.create(product);
+//		
+//	}
+//	
+//	@PostMapping
+//	public Producto update (@RequestBody Producto product) {
+//		return productoDao.create(product);
+//		
+//	}
+//	
+//	@DeleteMapping
+//	public void delete(@RequestBody Producto product) {
+//		productoDao.delete(product);
+//	}
 
 }

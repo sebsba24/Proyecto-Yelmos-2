@@ -10,6 +10,6 @@ public interface IRol {
 	public void create(Rol rol);
 	public void update(Rol rol);
 	public void delete(Rol rol);
-	
+	Rol finById(Long rol);
 
 }

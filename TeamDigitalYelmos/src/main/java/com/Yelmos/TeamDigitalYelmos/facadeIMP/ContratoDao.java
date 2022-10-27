@@ -10,32 +10,30 @@ import com.Yelmos.TeamDigitalYelmos.facade.IContratos;
 import com.Yelmos.TeamDigitalYelmos.repository.ContratoRepository;
 
 @Service
-public class ContratoDao implements IContratos {
+public class ContratoDao {
 	
 	@Autowired
 	private ContratoRepository contratoRepor;
 
-	@Override
-	public List<Contrato> findALll() {
-		return this.contratoRepor.findAll();
+	public List<Contrato> findAll() {
+		return contratoRepor.findAll();
 	}
 
-	@Override
-	public void create(Contrato contrac) {
-		this.contratoRepor.save(contrac);
+
+	public Contrato create(Contrato contrac) {
+		return contratoRepor.save(contrac);
 		
 	}
 
-	@Override
-	public void update(Contrato contrac) {
-		this.contratoRepor.save(contrac);
+
+	public Contrato update(Contrato contrac) {
+		return contratoRepor.save(contrac);
 		
 	}
 
-	@Override
+
 	public void delete(Contrato contrac) {
-		Contrato cont = this.contratoRepor.getById(contrac.getIdContrato());
-		this.contratoRepor.delete(cont);
+		contratoRepor.delete(contrac);
 		
 	}
 	

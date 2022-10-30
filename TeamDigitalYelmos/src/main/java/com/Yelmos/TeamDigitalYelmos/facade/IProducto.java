@@ -2,7 +2,7 @@ package com.Yelmos.TeamDigitalYelmos.facade;
 
 import java.util.List;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Producto;
+import com.Yelmos.TeamDigitalYelmos.model.Producto;
 
 public interface IProducto {
 	

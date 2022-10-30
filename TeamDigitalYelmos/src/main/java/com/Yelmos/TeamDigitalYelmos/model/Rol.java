@@ -1,4 +1,4 @@
-package com.Yelmos.TeamDigitalYelmos.Yelmos2;
+package com.Yelmos.TeamDigitalYelmos.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -26,6 +26,25 @@ public class Rol implements Serializable{
 	@Column(name="nombreRol", length =20)
 	private String nombreRol;
 
+	public Rol() {
+		
+	}
+	
+	
+	public Rol(String nombreRol) {
+		super();
+		this.nombreRol = nombreRol;
+	}
+	
+	
+
+	public Rol(Long idRol, String nombreRol) {
+		super();
+		this.idRol = idRol;
+		this.nombreRol = nombreRol;
+	}
+
+
 	public Long getRol() {
 		return idRol;
 	}
@@ -41,6 +60,7 @@ public class Rol implements Serializable{
 	public void setNombreRol(String nombreRol) {
 		this.nombreRol = nombreRol;
 	}
+	
 	
 	
 	

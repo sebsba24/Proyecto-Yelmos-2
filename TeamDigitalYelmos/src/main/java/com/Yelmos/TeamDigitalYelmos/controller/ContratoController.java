@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Contrato;
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ContratoDao;
+import com.Yelmos.TeamDigitalYelmos.model.Contrato;
+import com.Yelmos.TeamDigitalYelmos.model.Rol;
 
 @Controller
 @RequestMapping(path = "/api/TeamDigitalYelmos/Contratos")

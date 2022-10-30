@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Reserva;
 import com.Yelmos.TeamDigitalYelmos.facade.IReservas;
+import com.Yelmos.TeamDigitalYelmos.model.Reserva;
 import com.Yelmos.TeamDigitalYelmos.repository.ReservaRepository;
 
 @Service

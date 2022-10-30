@@ -17,32 +17,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.RolDao;
+import com.Yelmos.TeamDigitalYelmos.model.Rol;
 
 @RestController
-@RequestMapping("/Rol/")
+@RequestMapping("/api/")
 public class RolController {
 	@Autowired
 	private RolDao rolDao;
 	
-	@GetMapping
+	@GetMapping("roles")
 	public List<Rol> findAll(){
 		return rolDao.findALll();
 	}
 	
-	@PostMapping
+	@PostMapping("roles")
 	public Rol create (@RequestBody Rol roo){
 		return rolDao.create(roo);
 		
 	}
 	
-	@PutMapping
+	@PutMapping("roles")
 	public Rol update (@RequestBody Rol roo) {
 		return rolDao.update(roo);
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("roles")
 	public void delete (@RequestBody Rol roo) {
 		rolDao.delete(roo);
 	}

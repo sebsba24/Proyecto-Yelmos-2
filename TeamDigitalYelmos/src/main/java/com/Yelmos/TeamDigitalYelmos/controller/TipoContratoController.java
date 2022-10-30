@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.TipoContrato;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.TipoControtaDao;
+import com.Yelmos.TeamDigitalYelmos.model.TipoContrato;
 
 @RestController
 @RequestMapping(path= "/api/teamDigitalYelmos/tipocontrato" )

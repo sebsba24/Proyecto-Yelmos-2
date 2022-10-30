@@ -1,4 +1,4 @@
-package com.Yelmos.TeamDigitalYelmos.Yelmos2;
+package com.Yelmos.TeamDigitalYelmos.model;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -45,7 +45,7 @@ public class Reserva implements Serializable {
 	private Date finR;
 	
 	@ManyToOne
-    @JoinColumn(name="fk_usuario", referencedColumnName = "idUsuario")
+    @JoinColumn(name="fk_usuario")
     private Usuario fk_usuario;
 	
 	public Long getIdR() {

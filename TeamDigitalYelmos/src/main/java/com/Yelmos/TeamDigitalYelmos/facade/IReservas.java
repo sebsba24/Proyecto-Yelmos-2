@@ -2,7 +2,7 @@ package com.Yelmos.TeamDigitalYelmos.facade;
 
 import java.util.List;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Reserva;
+import com.Yelmos.TeamDigitalYelmos.model.Reserva;
 
 public interface IReservas {
 	

@@ -1,4 +1,4 @@
-package com.Yelmos.TeamDigitalYelmos.Yelmos2;
+package com.Yelmos.TeamDigitalYelmos.model;
 
 import java.io.Serializable;
 import java.util.List;

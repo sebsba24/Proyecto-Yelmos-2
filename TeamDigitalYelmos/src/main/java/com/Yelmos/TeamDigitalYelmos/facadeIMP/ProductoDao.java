@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Producto;
 import com.Yelmos.TeamDigitalYelmos.facade.IProducto;
+import com.Yelmos.TeamDigitalYelmos.model.Producto;
 import com.Yelmos.TeamDigitalYelmos.repository.ProductoRepository;
 
 @Service

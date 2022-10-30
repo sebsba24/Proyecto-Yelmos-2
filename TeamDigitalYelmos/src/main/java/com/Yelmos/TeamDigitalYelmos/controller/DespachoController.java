@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Despacho;
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Rol;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.DespachoDao;
+import com.Yelmos.TeamDigitalYelmos.model.Despacho;
+import com.Yelmos.TeamDigitalYelmos.model.Rol;
 
 @RestController
 @RequestMapping(path = "/api/TeamDigitalYelmos/Despachos")

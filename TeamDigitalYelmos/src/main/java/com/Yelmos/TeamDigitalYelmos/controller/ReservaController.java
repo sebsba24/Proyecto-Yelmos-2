@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Reserva;
 import com.Yelmos.TeamDigitalYelmos.facadeIMP.ReservaDao;
+import com.Yelmos.TeamDigitalYelmos.model.Reserva;
 
 @RestController
 @RequestMapping(path= "/api/teamDigitalYelmos/reservas" )

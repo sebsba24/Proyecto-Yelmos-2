@@ -1,4 +1,4 @@
-package com.Yelmos.TeamDigitalYelmos.Yelmos2;
+package com.Yelmos.TeamDigitalYelmos.model;
 
 import java.io.Serializable;
 
@@ -22,26 +22,22 @@ import javax.persistence.OneToMany;
 @Table(name = "usuarios")
 @Getter
 @Setter 
-public class Usuario implements Serializable {
+public class Usuario {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "idUsuario")
-	private Long idU;
+	private Long idUsuario;
 	
 	@Column(name = "nombreU", length =40)
-	private String nomU;
+	private String nombreU;
 	
 	@Column(name = "apellidoU", length =40)
-	private String apeU;
+	private String apellidoU;
 	
 	@Column(name = "emailU", length =80)
-	private String emaU;
+	private String emailU;
 	
 	@Column(name = "documento")
 	private Long documento;
@@ -59,77 +55,135 @@ public class Usuario implements Serializable {
 	@OneToMany(mappedBy = "fk_usuario")
 	private List<Reserva> ListReserva;
 
-	public Long getIdU() {
-		return idU;
+	
+	public Usuario() {
+		
+	}
+	
+	
+	public Usuario(String nombreU, String apellidoU, String emailU, Long documento, String estado,
+			String contrasena, Rol rol) {
+		super();
+		this.nombreU = nombreU;
+		this.apellidoU = apellidoU;
+		this.emailU = emailU;
+		this.documento = documento;
+		this.estado = estado;
+		this.contrasena = contrasena;
+		this.rol = rol;
 	}
 
-	public void setIdU(Long idU) {
-		this.idU = idU;
+
+
+	public Long getIdUsuario() {
+		return idUsuario;
 	}
 
-	public String getNomU() {
-		return nomU;
+
+
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
-	public void setNomU(String nomU) {
-		this.nomU = nomU;
+
+
+	public String getNombreU() {
+		return nombreU;
 	}
 
-	public String getApeU() {
-		return apeU;
+
+
+	public void setNombreU(String nombreU) {
+		this.nombreU = nombreU;
 	}
 
-	public void setApeU(String apeU) {
-		this.apeU = apeU;
+
+
+	public String getApellidoU() {
+		return apellidoU;
 	}
 
-	public String getEmaU() {
-		return emaU;
+
+
+	public void setApellidoU(String apellidoU) {
+		this.apellidoU = apellidoU;
 	}
 
-	public void setEmaU(String emaU) {
-		this.emaU = emaU;
+
+
+	public String getEmailU() {
+		return emailU;
 	}
+
+
+
+	public void setEmailU(String emailU) {
+		this.emailU = emailU;
+	}
+
+
 
 	public Long getDocumento() {
 		return documento;
 	}
 
+
+
 	public void setDocumento(Long documento) {
 		this.documento = documento;
 	}
+
+
 
 	public String getEstado() {
 		return estado;
 	}
 
+
+
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
+
+
 
 	public String getContrasena() {
 		return contrasena;
 	}
 
+
+
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
+
+
 
 	public Rol getRol() {
 		return rol;
 	}
 
+
+
 	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
+
+
 
 	public List<Reserva> getListReserva() {
 		return ListReserva;
 	}
 
+
+
 	public void setListReserva(List<Reserva> listReserva) {
 		ListReserva = listReserva;
 	}
+
+
+
+	
 
 	
 	

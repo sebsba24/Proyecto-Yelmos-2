@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.TipoContrato;
+import com.Yelmos.TeamDigitalYelmos.model.TipoContrato;
 import com.Yelmos.TeamDigitalYelmos.repository.TipoContratoRepository;
 
 @Service

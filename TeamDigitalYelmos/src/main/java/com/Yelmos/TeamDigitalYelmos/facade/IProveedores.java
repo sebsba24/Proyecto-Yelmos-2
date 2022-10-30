@@ -2,7 +2,7 @@ package com.Yelmos.TeamDigitalYelmos.facade;
 
 import java.util.List;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.Proveedor;
+import com.Yelmos.TeamDigitalYelmos.model.Proveedor;
 
 public interface IProveedores {
 	

@@ -2,7 +2,7 @@ package com.Yelmos.TeamDigitalYelmos.facade;
 
 import java.util.List;
 
-import com.Yelmos.TeamDigitalYelmos.Yelmos2.TipoContrato;
+import com.Yelmos.TeamDigitalYelmos.model.TipoContrato;
 
 public interface ITipoContrato {
 	

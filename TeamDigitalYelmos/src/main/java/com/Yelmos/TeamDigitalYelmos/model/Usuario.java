@@ -59,8 +59,28 @@ public class Usuario {
 	public Usuario() {
 		
 	}
+
 	
-	
+	public Usuario(String emailU) {
+		super();
+		this.emailU = emailU;
+	}
+
+
+	public Usuario(Long idUsuario, String nombreU, String apellidoU, String emailU, Long documento, String estado,
+			String contrasena, Rol rol) {
+		super();
+		this.idUsuario = idUsuario;
+		this.nombreU = nombreU;
+		this.apellidoU = apellidoU;
+		this.emailU = emailU;
+		this.documento = documento;
+		this.estado = estado;
+		this.contrasena = contrasena;
+		this.rol = rol;
+	}
+
+
 	public Usuario(String nombreU, String apellidoU, String emailU, Long documento, String estado,
 			String contrasena, Rol rol) {
 		super();

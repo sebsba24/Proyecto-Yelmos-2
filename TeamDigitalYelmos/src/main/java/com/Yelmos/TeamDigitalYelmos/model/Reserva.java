@@ -12,12 +12,8 @@ import lombok.Setter;
 @Table(name = "reservas")
 @Getter
 @Setter
-public class Reserva implements Serializable {
+public class Reserva {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

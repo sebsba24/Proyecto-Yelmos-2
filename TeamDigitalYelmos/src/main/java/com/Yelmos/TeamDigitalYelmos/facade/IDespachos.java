@@ -8,7 +8,9 @@ public interface IDespachos {
 	
 	public List<Despacho> findALll();
 	public void create(Despacho despa);
+	public void saveDes(Despacho despa);
+	public Despacho findById(Long idDespa);
 	public void update(Despacho despa);
-	public void delete(Despacho despa);
+	public void delete(Long idDespa);
 
 }

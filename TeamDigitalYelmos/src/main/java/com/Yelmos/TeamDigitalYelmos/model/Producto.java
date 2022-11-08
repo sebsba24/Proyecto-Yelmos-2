@@ -12,12 +12,8 @@ import lombok.Setter;
 @Table(name = "productos")
 @Getter
 @Setter
-public class Producto implements Serializable {
+public class Producto {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,15 +32,71 @@ public class Producto implements Serializable {
     private TipoProducto idTP;
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_inventario", referencedColumnName = "idInventario")
+	@JoinColumn(name = "fk_inventario")
 	private Inventario fk_inventario;
+
+	public Producto() {
+		
+	}
 	
-	@ManyToMany(mappedBy = "ListProducto")
-	private List<Despacho> ListDespacho;
+	public Producto(Long idProduc, String nomProduct, Categoria idCatego, TipoProducto idTP, Inventario fk_inventario) {
+		super();
+		this.idProduc = idProduc;
+		this.nomProduct = nomProduct;
+		this.idCatego = idCatego;
+		this.idTP = idTP;
+		this.fk_inventario = fk_inventario;
+	}
 	
+	public Producto(String nomProduct, Categoria idCatego, TipoProducto idTP, Inventario fk_inventario) {
+		super();
+		this.nomProduct = nomProduct;
+		this.idCatego = idCatego;
+		this.idTP = idTP;
+		this.fk_inventario = fk_inventario;
+	}
+
 	public Long getIdProduc() {
 		return idProduc;
 	}
+
+	public void setIdProduc(Long idProduc) {
+		this.idProduc = idProduc;
+	}
+
+	public String getNomProduct() {
+		return nomProduct;
+	}
+
+	public void setNomProduct(String nomProduct) {
+		this.nomProduct = nomProduct;
+	}
+
+	public Categoria getIdCatego() {
+		return idCatego;
+	}
+
+	public void setIdCatego(Categoria idCatego) {
+		this.idCatego = idCatego;
+	}
+
+	public TipoProducto getIdTP() {
+		return idTP;
+	}
+
+	public void setIdTP(TipoProducto idTP) {
+		this.idTP = idTP;
+	}
+
+	public Inventario getFk_inventario() {
+		return fk_inventario;
+	}
+
+	public void setFk_inventario(Inventario fk_inventario) {
+		this.fk_inventario = fk_inventario;
+	}
+	
+	
 	
 	
 	

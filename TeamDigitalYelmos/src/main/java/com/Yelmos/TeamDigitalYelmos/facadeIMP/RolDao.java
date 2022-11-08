@@ -47,21 +47,21 @@ public class RolDao{
 //		return roo;
 //	}
 	
-	public List<Rol> findALll() {
-		return this.rolRepor.findAll();
-	}
-	
-	public Rol create (Rol roo) {
-		return rolRepor.save(roo);
-	}
-
-	public Rol update (Rol roo) {
-		return rolRepor.save(roo);
-	}
-	
-	public void delete (Rol roo) {
-		rolRepor.delete(roo);
-	}
+//	public List<Rol> findALll() {
+//		return this.rolRepor.findAll();
+//	}
+//	
+//	public Rol create (Rol roo) {
+//		return rolRepor.save(roo);
+//	}
+//
+//	public Rol update (Rol roo) {
+//		return rolRepor.save(roo);
+//	}
+//	
+//	public void delete (Rol roo) {
+//		rolRepor.delete(roo);
+//	}
 
 	
 	

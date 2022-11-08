@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<title>Crear Despacho</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Ingresar Despacho</h1>
+				<div class="card-body">
+					<form th:action="@{/despachos}" th:object="${despacho}" method="POST">
+						<div class="row">
+							<div class="col">
+								<label>Fecha Salida:</label> <input type="text" name="fecha_salida" th:field="*{fechaSalida}" class="form-control" 
+								placeholder="Digite la fecha: " required="required">
+							</div>
+							<br>
+							<div class="col">
+								<label>Cantidad Salida:</label> <input type="number" name="cantidad_salida" th:field="*{cantidadSalida}" class="form-control" 
+								placeholder="Digite la cantidad de salida: " required="required">
+							</div>			
+						</div>
+						<br>
+						
+						<div class="row">
+							<div class="col">
+								<label>Estado:</label> 
+								<select name="estado" th:field="*{estadoDespacho}" class="form-control" required="required">								
+									<option value= "activo">Activo</option>
+									<option value= "entregado">Entregado</option>
+									<option value= "cancelado">Cancelado</option>					
+								</select>							
+							</div>
+							
+							<br>
+							<div class="col">
+								<label>Producto:</label> <input type="text" name="producto" th:field="*{fk_productoD}" class="form-control" 
+								placeholder="Digite el producto: " required="required">
+							</div>
+							<br>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col">
+								<label>Packing:</label> <input type="text" name="packing" th:field="*{fk_packing}" class="form-control" 
+								placeholder="Digite el estado: " required="required">
+							</div>
+						</div> 
+						<br>
+						<div class="row">
+							<div class="box-footer">
+								<button class="btn btn-success">Registrar</button>							
+							</div>
+						</div>
+					</form>
+				</div>			
+			</div>
+		</div>	
+	</div>
+</body>
+</html>

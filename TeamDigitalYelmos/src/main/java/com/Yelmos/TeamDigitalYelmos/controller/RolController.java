@@ -26,26 +26,26 @@ public class RolController {
 	@Autowired
 	private RolDao rolDao;
 	
-	@GetMapping("roles")
-	public List<Rol> findAll(){
-		return rolDao.findALll();
-	}
-	
-	@PostMapping("roles")
-	public Rol create (@RequestBody Rol roo){
-		return rolDao.create(roo);
-		
-	}
-	
-	@PutMapping("roles")
-	public Rol update (@RequestBody Rol roo) {
-		return rolDao.update(roo);
-	}
-	
-	@DeleteMapping("roles")
-	public void delete (@RequestBody Rol roo) {
-		rolDao.delete(roo);
-	}
+//	@GetMapping("roles")
+//	public List<Rol> findAll(){
+//		return rolDao.findALll();
+//	}
+//	
+//	@PostMapping("roles")
+//	public Rol create (@RequestBody Rol roo){
+//		return rolDao.create(roo);
+//		
+//	}
+//	
+//	@PutMapping("roles")
+//	public Rol update (@RequestBody Rol roo) {
+//		return rolDao.update(roo);
+//	}
+//	
+//	@DeleteMapping("roles")
+//	public void delete (@RequestBody Rol roo) {
+//		rolDao.delete(roo);
+//	}
 	
 //	@GetMapping
 //	public ResponseEntity<Map<String, Object>> allUsuario(){

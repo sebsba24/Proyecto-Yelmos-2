@@ -10,28 +10,44 @@ import com.Yelmos.TeamDigitalYelmos.model.Despacho;
 import com.Yelmos.TeamDigitalYelmos.repository.DespachoRepository;
 
 @Service
-public class DespachoDao {
+public class DespachoDao implements IDespachos {
 
 	@Autowired
 	private DespachoRepository despachoRepor;
+
+	@Override
+	public List<Despacho> findALll() {
+		return this.despachoRepor.findAll();
+	}
+
+	@Override
+	public void create(Despacho despa) {
+		despachoRepor.save(despa);		
+	}
+
+	@Override
+	public void saveDes(Despacho despa) {
+		despachoRepor.save(despa);
+		
+	}
+
+	@Override
+	public Despacho findById(Long idDespa) {
+		return despachoRepor.findById(idDespa).get();
+	}
+
+	@Override
+	public void update(Despacho despa) {
+		despachoRepor.save(despa);
+		
+	}
+
+	@Override
+	public void delete(Long idDespa) {
+		despachoRepor.deleteById(idDespa);
+		
+	}
 	
-	public List<Despacho> findAll() {
-		return despachoRepor.findAll();
-	}
-
-	public Despacho create(Despacho despa) {
-		return despachoRepor.save(despa);
-		
-	}
-
-	public Despacho  update(Despacho despa) {
-		return despachoRepor.save(despa);
-		
-	}
-
-	public void delete(Despacho despa) {
-		despachoRepor.delete(despa);
-	}
 	
 	
 

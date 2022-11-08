@@ -10,13 +10,8 @@ import lombok.Setter;
 @Table(name = "roles")
 @Getter
 @Setter
-public class Rol implements Serializable{
+public class Rol{
 	
-	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
